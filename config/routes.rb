@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'welcome/index'
+
+  resources :articles
+
+  root 'welcome#index'
+  # 초기경로를 welcome 컨트롤러 index로 보내라
 end
