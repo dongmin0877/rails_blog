@@ -1,6 +1,8 @@
-<h1>New Article</h1>
+<h1>Edit <%= params[:id] %>번 Article</h1>
 
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+<%= @article_id %>
+
+<%= form_with(model: @article, local: true) do |form| %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -16,4 +18,5 @@
 </p>
 
 <% end %>
+
 <p><%= link_to 'list', articles_path() %></p>
