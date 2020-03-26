@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
 
     if @article.save
       redirect_to @article
+      # redirect_to articles_path
     else
         render 'new'
     end
@@ -36,6 +37,13 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :text)

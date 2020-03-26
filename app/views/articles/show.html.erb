@@ -7,4 +7,10 @@
     <%= @article.text %>
 </p>
 <p><%= link_to 'edit', edit_article_path(@article.id) %></p>
+<p>
+<%= link_to 'delete',
+    article_path(@article.id),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+</p>
 <p><%= link_to 'list', articles_path() %></p>
